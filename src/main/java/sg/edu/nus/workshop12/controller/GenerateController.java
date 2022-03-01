@@ -38,7 +38,7 @@ public class GenerateController {
         }
 
         // this end ppint is to handle the form submission
-        @PostMapping("/generate")
+        @PostMapping("/generate123")
         public String generateNumbers(@ModelAttribute Generate generate,
                 Model model){
                 try{
@@ -108,5 +108,13 @@ public class GenerateController {
                 // forward to the result pages to show a list of random
                 // generated from the above flow.x
                 return "result";
+        }
+
+
+        @GetMapping ("/error")
+        public String errorPage(Model m){
+                m.addAttribute("errorMessage", "OMG exceed 10 already !");
+                //m.addAttribute("errorMessage", "error from error page");
+                return "error";
         }
 }
